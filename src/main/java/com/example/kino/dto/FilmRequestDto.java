@@ -5,16 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class FilmDTO {
-    Integer ratingFrom;
-    Integer ratingTo;
-    Integer yearFrom;
-    Integer yearTo;
+@AllArgsConstructor
+public class FilmRequestDto {
     String keyword;
-    String genre;
-    int pageNumber;
-    int pageSize;
-    String to;
+    Integer genre;
+    Integer ratingFrom;
+    Integer yearFrom;
+    Integer page;
 }
