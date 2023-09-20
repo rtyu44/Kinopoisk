@@ -1,23 +1,18 @@
 package com.example.kino.client;
 
-import com.example.kino.dto.FilmDto;
 import com.example.kino.dto.FilmRequestDto;
 import com.example.kino.dto.FilmResponseDto;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.internal.bytebuddy.NamingStrategy;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.List;
 
 @Component
 @RequiredArgsConstructor
 public class FilmClient {
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
     private static final String urlFilms = "https://kinopoiskapiunofficial.tech/api/v2.2/films";
 
 

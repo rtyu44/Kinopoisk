@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FilmDto {
+public class FilmDto{
 
     private Integer kinopoiskId;
     private String nameRu;

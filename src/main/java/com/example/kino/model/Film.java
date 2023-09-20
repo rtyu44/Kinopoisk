@@ -17,18 +17,18 @@ public class Film implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @Column(name = "kinopoiskId")
+    @Column(name = "kinopoiskId")
     private Integer kinopoiskId;
 
-//    @Column(name = "nameRu")
+    @Column(name = "nameRu")
     private String nameRu;
-//    @Column(name = "ratingImdb")
+    @Column(name = "ratingImdb")
     private Integer ratingImdb;
-//    @Column(name = "year")
+    @Column(name = "year")
     private Integer year;
-//    @Column(name = "description")
+    @Column(name = "description")
     private String description;
-//    @Column(name = "nameOriginal")
+    @Column(name = "nameOriginal")
     private String nameOriginal;
 
     public Film(Integer kinopoiskId, String nameRu, Integer ratingImdb, Integer year, String description, String nameOriginal) {
