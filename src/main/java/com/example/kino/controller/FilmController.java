@@ -8,10 +8,12 @@ import com.example.kino.dto.FilmResponseDto;
 import com.example.kino.model.Film;
 import com.example.kino.service.FilmService;
 import com.example.kino.service.FilmServiceImpl;
+import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -30,8 +32,14 @@ public class FilmController {
     }
 
     @GetMapping("/films")
-    public List<Film> getFilms(@ModelAttribute FilmFilterDto filterDto){
-        List<Film> films = filmService.sort(filterDto);
+    public List<Film> getFilms(@ModelAttribute FilmFilterDto f){
+        List<Film> films = filmService.sort(f);
         return films;
+    }
+
+    @GetMapping("/email")
+    public String getEmail(@ModelAttribute FilmFilterDto f) throws IOException, MessagingException {
+        filmService.getEmail(f);
+        return "Фильмы отправлены по почте.";
     }
 }
