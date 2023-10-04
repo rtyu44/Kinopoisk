@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 
+
+
 @Component
 @RequiredArgsConstructor
 public class Email {
@@ -25,11 +27,11 @@ public class Email {
 
         helper.setFrom("noreply@foreach.com");
         helper.setTo(to);
-        helper.setSubject("Отчет");
+        helper.setSubject("отчет");
         helper.setText("тест");
 
         FileSystemResource file
-                = new FileSystemResource(new File("C:\\XML/file.xml"));
+                = new FileSystemResource(new File("C:\\file.xml"));
         helper.addAttachment("Invoice", file);
 
         emailSender.send(message);

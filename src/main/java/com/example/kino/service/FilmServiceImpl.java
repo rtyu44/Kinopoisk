@@ -22,7 +22,9 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
@@ -62,13 +64,19 @@ public class FilmServiceImpl implements FilmService {
     public void getEmail(FilmFilterDto f) throws IOException, MessagingException {
 
         List<Film> film = filmDaoImpl.sort(f);
-        File file = new File("C:\\XML/file.xml");
+        File file = new File("C:\\file.xml");
         if(!file.exists()){
             file.createNewFile();
         }
-        for(Film film1: film){
-
+        BufferedWriter file1 = new BufferedWriter(new FileWriter(file));
+        for(Film f2: film) {
+            String dataXML = xStream.toXML(f2);
+            file1.write(dataXML);
         }
+        file1.close();
+
+        email.getEmail(f.getTo());
+
 
     }
 

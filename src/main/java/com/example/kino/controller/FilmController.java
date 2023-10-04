@@ -40,6 +40,6 @@ public class FilmController {
     @GetMapping("/email")
     public String getEmail(@ModelAttribute FilmFilterDto f) throws IOException, MessagingException {
         filmService.getEmail(f);
-        return "Фильмы отправлены по почте.";
+        return "OK";
     }
 }
