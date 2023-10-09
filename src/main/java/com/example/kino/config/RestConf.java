@@ -30,8 +30,8 @@ public class RestConf {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("tachergg456@gmail.com");
-        mailSender.setPassword("cpaalvncpcfgbmnp");
+        mailSender.setUsername("*");
+        mailSender.setPassword("*");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
