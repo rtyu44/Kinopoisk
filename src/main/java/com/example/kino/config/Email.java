@@ -26,13 +26,13 @@ public class Email {
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
         helper.setFrom("noreply@foreach.com");
-        helper.setTo(to);
+        helper.setTo("*");
         helper.setSubject("отчет");
         helper.setText("тест");
 
         FileSystemResource file
-                = new FileSystemResource(new File("C:\\file.xml"));
-        helper.addAttachment("Invoice", file);
+                = new FileSystemResource(new File("C:\\XML/file.xml"));
+        helper.addAttachment("Tes", file);
 
         emailSender.send(message);
     }

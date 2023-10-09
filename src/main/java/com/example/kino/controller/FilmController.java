@@ -1,17 +1,14 @@
 package com.example.kino.controller;
 
 
-import com.example.kino.client.FilmClient;
 import com.example.kino.dto.FilmFilterDto;
 import com.example.kino.dto.FilmRequestDto;
 import com.example.kino.dto.FilmResponseDto;
 import com.example.kino.model.Film;
 import com.example.kino.service.FilmService;
-import com.example.kino.service.FilmServiceImpl;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.List;
